@@ -18,24 +18,6 @@ function typeHeading() {
   }
 }
 
-// Typing Effect for Paragraph
-const paraText = "I was born on April 2, 2000, and I am from Tandang Sora, Quezon City. I graduated from New Era University with a Bachelor of Science in Information Technology.";
-let j = 0;
-
-function typeParagraph() {
-  if (j < paraText.length) {
-    document.querySelector(".text .p_me").innerHTML += paraText.charAt(j);
-    j++;
-    setTimeout(typeParagraph, 50); // mas mabilis konti
-  }
-}
-
-window.onload = () => {
-  typeHeading();
-  typeParagraph();
-};
-
-
 // Falling Leaves Generator
 function createLeaf() {
   const leaf = document.createElement("div");
@@ -55,18 +37,6 @@ function createLeaf() {
   }, 10000);
 }
 setInterval(createLeaf, 500);
-
-// Card fade-in
-document.addEventListener("DOMContentLoaded", () => {
-  const card = document.querySelector(".card");
-  card.style.opacity = "0";
-  card.style.transform = "translateY(20px)";
-  setTimeout(() => {
-    card.style.transition = "all 1s ease";
-    card.style.opacity = "1";
-    card.style.transform = "translateY(0)";
-  }, 200);
-});
 
 // Parallax effect
 let lastScrollY = 0;
@@ -92,6 +62,39 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// 2
+
+// Typing Effect for Paragraph
+const paraText = "I was born on April 2, 2000, and I am from Tandang Sora, Quezon City. I graduated from New Era University with a Bachelor of Science in Information Technology.";
+let j = 0;
+
+function typeParagraph() {
+  if (j < paraText.length) {
+    document.querySelector(".text .p_me").innerHTML += paraText.charAt(j);
+    j++;
+    setTimeout(typeParagraph, 50); // mas mabilis konti
+  }
+}
+
+window.onload = () => {
+  typeHeading();
+  typeParagraph();
+};
+
+// Card fade-in
+document.addEventListener("DOMContentLoaded", () => {
+  const card = document.querySelector(".card");
+  card.style.opacity = "0";
+  card.style.transform = "translateY(20px)";
+  setTimeout(() => {
+    card.style.transition = "all 1s ease";
+    card.style.opacity = "1";
+    card.style.transform = "translateY(0)";
+  }, 200);
+});
+
+//3
+
 // script.js
 const elements = document.querySelectorAll(".h2-me, .h3-me, li");
 let lastScrollTop = 0;
@@ -115,6 +118,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+//4
 
 // Generate snowflakes
 const snowContainer = document.querySelector(".snow");
@@ -188,6 +192,8 @@ const keywords = [
   "Captain America shows that being a hero is not just about powers—it’s about having the heart to stand up for what’s right and to protect people, no matter the odds"
 ];
 
+//5
+
 function typeEffect() {
   if (index < text.length) {
     // Check if current text matches a keyword
@@ -206,7 +212,6 @@ function typeEffect() {
 }
 
 window.addEventListener('DOMContentLoaded', typeEffect);
-
 
 // Apply stacked shadow for 3D extrusion effect
   document.querySelectorAll('.iso-text').forEach(text => {
