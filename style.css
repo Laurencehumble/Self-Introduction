@@ -344,6 +344,11 @@ h1 {
   height: 150vh;
         }
         
+@media (max-width: 768px) {
+    .hide-it {
+        display: none;
+    }
+}
         .card-rotate::before{
             position: absolute;
             width: min(1400px, 90vw);
@@ -509,6 +514,11 @@ h1 {
     font-size: 1.2rem;
   }
 }
+
+  .banner .slider {
+    width: 30vmin;
+    height: 45vmin;
+  }
 
 
 /* Pause rotation on hover */
@@ -862,7 +872,6 @@ li {
     width: 500px; /* desktop size */
     height: auto;
 }
-
 
 /* Laptop */
 @media (max-width: 1200px) {
