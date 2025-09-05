@@ -863,13 +863,6 @@ li {
     height: auto;
 }
 
-/* Laptop */
-@media (max-width: 1280px) {
-    .rock img:nth-child(1){
-         width: 600px;
-        bottom: 160px;
-    }
-}
 
 /* Laptop */
 @media (max-width: 1200px) {
