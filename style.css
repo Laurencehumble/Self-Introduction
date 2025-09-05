@@ -806,7 +806,7 @@ li {
 }
 
 /* Product container */
-.product {
+/* .product {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -818,7 +818,7 @@ li {
     justify-content: center;
     align-items: center;
     transition: transform 0.7s;
-}
+} */
 
 /* Soda */
 .soda {
@@ -851,15 +851,67 @@ li {
     transition: transform 0.7s;
 }
 
-/* Individual rocks */
+/* Default size (desktop) */
 .rock img:nth-child(1){
     position: absolute;
-    height: 170px;
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%) translateY(var(--scrollRock1, 0px));
     z-index: 1;
+
+    width: 500px; /* desktop size */
+    height: auto;
 }
+
+/* Laptop */
+@media (max-width: 1280px) {
+    .rock img:nth-child(1){
+         width: 600px;
+        bottom: 160px;
+    }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+    .rock img:nth-child(1){
+         width: 600px;
+        bottom: 160px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .rock img:nth-child(1){
+        width: 600px;
+        bottom: 160px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .rock img:nth-child(1){
+        width: 400px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .rock img:nth-child(1){
+        width: 400px;
+         bottom: 100px;
+    }
+    
+}
+
+/* Small mobile */
+@media (max-width: 376px) {
+    .rock img:nth-child(1){
+        width: 500px;
+         bottom: 150px;
+    }
+    
+}
+
 
 .rock img:nth-child(2){
     position: absolute;
@@ -948,149 +1000,6 @@ li {
 .superhero-text b {
   color: #ffd700;
 } 
-
-@media (max-width: 1280px) {
-  .superhero-text,
-  .heroText {
-    max-width: 700px;
-line-height: 1.6;
-  font-size: 1.6rem;
-  }
-  .body-hero-answer {
-    padding: 18px;
-  }
-    .product {
-      top: 57%;
-        width: 400px;
-        bottom: 130px; /* lowered from 150px */
-    }
-    .soda {
-        width: 240px;
-    }
-    .rock img:nth-child(1) {
-        height: 140px;
-    }
-}
-
-/* Laptop / Large Tablets */
-@media (max-width: 1200px) {
-  .superhero-text,
-  .heroText {
-    max-width: 700px;
-    font-size: 1.45rem;
-    line-height: 1.5;
-  }
-  .body-hero-answer {
-    padding: 18px;
-  }
-    .product {
-      top: 57%;
-        width: 400px;
-        bottom: 130px; /* lowered from 150px */
-    }
-    .soda {
-        width: 240px;
-    }
-    .rock img:nth-child(1) {
-        height: 140px;
-    }
-}
-
-/* Laptop / Large Tablets */
-@media (max-width: 1024px) {
-  .superhero-text,
-  .heroText {
-    max-width: 700px;
-    font-size: 1.45rem;
-    line-height: 1.5;
-  }
-  .body-hero-answer {
-    padding: 18px;
-  }
-    .product {
-      top: 60%;
-        width: 400px;
-        bottom: 130px; /* lowered from 150px */
-    }
-    .soda {
-        width: 240px;
-    }
-    .rock img:nth-child(1) {
-        height: 140px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 900px) {
-    .superhero-text,
-  .heroText {
-    max-width: 600px;
-    font-size: 1.3rem;
-    line-height: 1.4;
-  }
-  .body-hero-answer {
-    padding: 16px;
-  }
-    .product {
-        width: 300px;
-        bottom: 100px; /* lowered from 120px */
-    }
-    .soda {
-        width: 200px;
-    }
-    .rock img:nth-child(1) {
-        height: 110px;
-    }
-}
-
-/* Laptop / Large Tablets */
-@media (max-width: 768px) {
-    .superhero-text,
-  .heroText {
-    max-width: 90%;
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
-  .body-hero-answer {
-    padding: 12px;
-  }
-    .product {
-      top: 50%;
-        width: 400px;
-        bottom: 130px; /* lowered from 150px */
-    }
-    .soda {
-        width: 240px;
-    }
-    .rock img:nth-child(1) {
-        height: 140px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .superhero-text,
-  .heroText {
-    max-width: 90%;
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
-  .body-hero-answer {
-    padding: 12px;
-  }
-    .product {
-      top: 66%;
-        width: 220px;
-        bottom: 70px; /* lowered from 90px */
-    }
-    .soda {
-        width: 160px;
-    }
-    .rock img:nth-child(1) {
-        height: 80px;
-    }
-}
-
 
 /* 6 */
 
