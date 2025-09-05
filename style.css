@@ -485,6 +485,9 @@ h1 {
 
 /* Small Mobile (max-width: 479px) */
 @media (max-width: 479px) {
+  .banner{
+    min-height: 90vh;
+  }
     .card-rotate{
              width: 100%;
   height: 120vh;
