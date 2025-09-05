@@ -1091,6 +1091,30 @@ line-height: 1.6;
     }
 }
 
+/* Mobile */
+@media (max-width: 1080px) {
+    .superhero-text,
+  .heroText {
+    max-width: 90%;
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+  .body-hero-answer {
+    padding: 12px;
+  }
+    .product {
+      top: 70%;
+        width: 220px;
+        bottom: 70px; /* lowered from 90px */
+    }
+    .soda {
+        width: 160px;
+    }
+    .rock img:nth-child(1) {
+        height: 80px;
+    }
+}
+
 /* 6 */
 
 .body-motto {
