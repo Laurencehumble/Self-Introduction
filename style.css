@@ -412,6 +412,10 @@ h1 {
 /* Laptop (max-width: 1200px) */
 @media (max-width: 1200px) {
 
+  .card-rotate{
+             width: 100%;
+  height: 150vh;
+  }
     .section-title {
     font-size: 3rem;
   }
@@ -433,6 +437,10 @@ h1 {
 
 /* Tablet (max-width: 991px) */
 @media (max-width: 991px) {
+    .card-rotate{
+             width: 100%;
+  height: 140vh;
+  }
     .section-title {
     font-size: 2.5rem;
   }
@@ -452,6 +460,10 @@ h1 {
 }
 
 /* Mobile (max-width: 767px) */
+  .card-rotate{
+             width: 100%;
+  height: 130vh;
+  }
 @media (max-width: 767px) {
     .section-title {
     font-size: 2rem;
@@ -473,6 +485,10 @@ h1 {
 
 /* Small Mobile (max-width: 479px) */
 @media (max-width: 479px) {
+    .card-rotate{
+             width: 100%;
+  height: 120vh;
+  }
     .section-title {
     font-size: 1.6rem;
   }
