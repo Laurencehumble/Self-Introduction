@@ -23,7 +23,7 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   #typing, .text .p_me, #heroText {
     font-size: 36px;
     line-height: 48px;
@@ -70,7 +70,7 @@
 
 
 /* 📱 Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .card {
     flex-direction: column; /* photo sa taas, text sa baba */
     align-items: center;
@@ -106,7 +106,7 @@
 }
 
 /* 📱 Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .card-rotate {
     height: auto; /* wag fixed 150vh para hindi sobrang haba */
     padding: 40px 20px;
@@ -123,7 +123,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .banner-2 {
     height: 100vh; /* bawasan height para hindi sobrang haba */
     margin-top: 0;
@@ -178,7 +178,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .product {
     width: 220px; /* mas maliit pa pag sobrang liit ng screen */
   }
