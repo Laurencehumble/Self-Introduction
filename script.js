@@ -1,5 +1,5 @@
 // Typing Effect for Heading
-const headingText = "Getting to Know Me";
+const headingText = "Getting To Know Me";
 let i = 0;
 const speed = 100; 
 const pause = 5000; 
@@ -65,7 +65,7 @@ window.addEventListener("scroll", function () {
 // 2
 
 // Typing Effect for Paragraph
-const paraText = "I was born on April 2, 2000, and I am from Tandang Sora, Quezon City. I graduated from New Era University with a Bachelor of Science in Information Technology.";
+const paraText = "Hi! I’m Rence. I was born on April 2, 2000, and I live at Janet Extension, Tandang Sora, Quezon City. I graduated from New Era University with a degree in Bachelor of Science in Information Technology. Here’s my latest photo along with a baby pic.";
 let j = 0;
 
 function typeParagraph() {
