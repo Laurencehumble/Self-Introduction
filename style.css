@@ -755,7 +755,7 @@ li {
 @media (max-width: 767px) {
     .body-me{
       height: auto;
-  max-height: 300px;
+  max-height: 200px;
   }
   .section-me {
     max-width: 90%;
@@ -779,7 +779,7 @@ li {
 @media (max-width: 479px) {
     .body-me{
       height: auto;
-  max-height: 300px;
+  max-height: 200px;
   }
   .section-me {
     max-width: 90%;
@@ -1024,7 +1024,7 @@ li {
 @media (max-width: 768px) {
   .body-hero-answer {
     padding: 10px;
-    height: 500px;
+    height: 600px;
   }
   .superhero-text {
     max-width: 90%;
@@ -1037,7 +1037,7 @@ li {
 @media (max-width: 480px) {
     .body-hero-answer {
     padding: 10px;
-    height: 500px;
+    height: 600px;
   }
   .superhero-text {
     font-size: 1rem;
