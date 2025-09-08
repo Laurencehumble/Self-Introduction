@@ -762,16 +762,16 @@ li {
     padding: 14px;
   }
   .h2-me {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .h3-me {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   li {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
   }
   .highlight {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 
@@ -781,21 +781,21 @@ li {
       height: auto;
   max-height: 200px;
   }
-  .section-me {
+ .section-me {
     max-width: 90%;
     padding: 14px;
   }
   .h2-me {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .h3-me {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   li {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
   }
   .highlight {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 
