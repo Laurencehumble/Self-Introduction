@@ -11,148 +11,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Hero Section */
-.hero {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    background-image: url('images/cartoon-smoke-illustrated.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-    will-change: background-position;
-    transition: background-position 0.1s linear;
-}
-
-/* Content (Centered Text) */
-.content {
-    font-size: 25px;
-    color: #fbfcfd;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: center;
-    padding: 0 10px;
-}
-
-/* Heading with Typing Effect */
-h1 {
-    font-size: 100px;
-    margin: 10px 0 30px;
-    line-height: 120px;
-    white-space: nowrap;
-    border-right: 4px solid #fbfcfd; /* blinking cursor */
-    width: fit-content;
-    overflow: hidden;
-}
-
-/* Leaves Container */
-.leaves {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Individual Leaf */
-.leaf {
-    position: absolute;
-    top: -10%;
-    width: 40px;
-    height: 40px;
-    background-image: url('images/close-up-leaf-isolated.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.9;
-    animation: fall linear infinite;
-}
-
-/* Falling Animation */
-@keyframes fall {
-    0% {
-        transform: translateY(-10%) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.7;
-    }
-}
-
-/* ========== RESPONSIVE STYLES ========== */
-
-/* Laptop (1200px - 992px) */
-@media (max-width: 1200px) {
-    h1 {
-        font-size: 80px;
-        line-height: 100px;
-    }
-    .content {
-        font-size: 22px;
-    }
-    .leaf {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-/* Tablet (991px - 768px) */
-@media (max-width: 991px) {
-    h1 {
-        font-size: 60px;
-        line-height: 80px;
-    }
-    .content {
-        font-size: 20px;
-    }
-    .leaf {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-/* Mobile (767px - 480px) */
-@media (max-width: 767px) {
-    h1 {
-        font-size: 40px;
-        line-height: 50px;
-    }
-    .content {
-        font-size: 18px;
-        padding: 0 10px;
-    }
-    .leaf {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-/* Small Mobile (479px and below) */
-@media (max-width: 479px) {
-    h1 {
-        font-size: 30px;
-        line-height: 40px;
-    }
-    .content {
-        font-size: 16px;
-        padding: 0 5px;
-    }
-    .leaf {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-
 /* 2 */
 
 /* Background Gradient */
@@ -240,6 +98,7 @@ h1 {
   object-fit: cover;
 }
 
+/* Small Photo wrapper (position only) */
 .small-photo {
   position: absolute;
   top: 50%;
@@ -248,16 +107,35 @@ h1 {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  overflow: hidden;
   border: 4px solid #fff;
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   z-index: 10;
+  overflow: hidden;
+  perspective: 1000px; /* enable 3D flip */
+}
+
+/* Inner element that flips */
+.small-photo .flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
 }
 
 .small-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Flip forward */
+.small-photo.flipping-forward .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Flip backward */
+.small-photo.flipping-backward .flip-inner {
+  transform: rotateY(0deg);
 }
 
 /* ==================== RESPONSIVE ==================== */
@@ -343,7 +221,7 @@ h1 {
         .card-rotate{
              width: 100%;
   height: 900px;
-  height: auto;
+  
         }
         
 @media (max-width: 768px) {
@@ -394,8 +272,7 @@ h1 {
 /* Keep your existing banner and slider CSS */
 .banner {
   width: 100%;
-  height: auto;
-  height: 900px;
+  height: 700px;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -616,60 +493,84 @@ h1 {
 /* 4 */
 
 .section-me {
-      max-width: 600px;
-      padding: 20px;
-    }
+  max-width: 700px;
+  padding: 20px;
+}
 
-    .h2-me, .h3-me, p, li {
-      margin: 15px 0;
-      transition: all 0.3s ease-in-out;
-    }
+.h2-me, .h3-me, p, li {
+  margin: 15px 0;
+  transition: all 0.3s ease-in-out;
+  color: #fff; /* Default white text */
+}
 
-    .neon {
-      color: #00f0ff;
-      font-weight: bold;
-      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff,
-                   0 0 20px #00f0ff, 0 0 40px #00f0ff;
-    }
+.neon {
+  color: #fff; /* White text */
+  font-weight: bold;
+  text-shadow: 0 0 5px #fdbb2d, 
+               0 0 10px #fdbb2d,
+               0 0 20px #fdbb2d, 
+               0 0 40px #fdbb2d;
+}
 
-    .highlight {
-      color: #ff00c8;
-      text-shadow: 0 0 5px #ff00c8, 0 0 15px #ff00c8,
-                   0 0 30px #ff00c8, 0 0 60px #ff00c8;
-    }
+.highlight {
+  color: #fff; /* White text */
+  text-shadow: 0 0 5px #fdbb2d, 
+               0 0 15px #fdbb2d,
+               0 0 30px #fdbb2d, 
+               0 0 60px #fdbb2d;
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+ul {
+  list-style: none;
+  padding: 0;
+}
 
-    li {
-      font-size: 1.2rem;
-    }
+li {
+  font-size: 1.2rem;
+}
 
-    /* Hover transition */
-    li:hover, .h2-me:hover, .h3-me:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff,
-                   0 0 40px #00f0ff, 0 0 80px #00f0ff;
-    }
+/* Hover transition */
+li:hover, .h2-me:hover, .h3-me:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #fdbb2d, 
+               0 0 20px #fdbb2d,
+               0 0 40px #fdbb2d, 
+               0 0 80px #fdbb2d;
+}
 
-/* --- Existing styles mo --- */
-.body-me { 
-  height: auto;
-  max-height: 600px;
-  background-image: url('images/6248154.jpg');
+.combination {
+  position: relative;
+  background-image: url('images/gaming-room-2.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  z-index: 1;
+}
+
+.combination::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* adjust 0.5 depende sa gusto mong dilim */
+  z-index: -1;
+}
+
+
+/* --- Existing styles mo --- */
+.body-me { 
+  position: relative; /* kailangan para gumana yung ::before */
+  height: 700px;
+  margin-bottom: 50px;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  color: #00f0ff;
+  color: white;
   text-align: center;
+  z-index: 1;
 }
 
 .h2-me {
@@ -696,8 +597,11 @@ li {
 
 /* --- Hover/Active effect --- */
 .active {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff33ff;
+  color: #00ffd5; /* Aqua / Cyan text */
+  text-shadow: 0 0 10px #00ffd5, 
+               0 0 20px #00ffd5, 
+               0 0 40px #00ffd5, 
+               0 0 80px #00ffd5;
 }
 
 /* ==================== RESPONSIVE BODY-ME ==================== */
@@ -706,21 +610,19 @@ li {
 /* Laptop (max-width: 1200px) */
 @media (max-width: 1280px) {
   .body-me{
-      height: auto;
-  max-height: 600px;
+  height: 650px;
   }
   .section-me {
-    max-width: 550px;
     padding: 18px;
   }
   .h2-me {
-    font-size: 2.6rem;
+    font-size: 3.3rem;
   }
   .h3-me {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   li {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .highlight {
     font-size: 2.5rem;
@@ -730,8 +632,7 @@ li {
 /* Tablet (max-width: 991px) */
 @media (max-width: 991px) {
     .body-me{
-      height: auto;
-  max-height: 600px;
+      height: 600px;
   }
   .section-me {
     max-width: 500px;
@@ -754,8 +655,7 @@ li {
 /* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
     .body-me{
-      height: auto;
-  max-height: 200px;
+      height: 600px;
   }
   .section-me {
     max-width: 90%;
@@ -778,8 +678,7 @@ li {
 /* Small Mobile (max-width: 479px) */
 @media (max-width: 479px) {
     .body-me{
-      height: auto;
-  max-height: 200px;
+  height: 600px;
   }
  .section-me {
     max-width: 90%;
@@ -803,6 +702,10 @@ li {
  
 /* Banner container */
 .banner-2 {
+    background-image: url('images/bg-america.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-top: -50px;
     height: 700px;
     overflow: hidden;
@@ -991,7 +894,7 @@ li {
 }
 
 .superhero-text b {
-  color: #ffd700;
+  color: #fdbb2d;
 }
 
 /* Responsive adjustments */
@@ -1063,20 +966,37 @@ li {
     align-items: center;
     overflow: hidden;
     padding: 0 20px;
+    position: relative; /* Needed for overlay */
+}
+
+/* Overlay for darkening background */
+.body-motto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25); /* Adjust opacity (0.3–0.6) */
+    z-index: 1;
+}
+
+/* Make sure text stays above overlay */
+.neon-text,
+.answer {
+    position: relative;
+    z-index: 2;
 }
 
 .neon-text {
     font-size: 4rem;
     font-weight: bold;
-    color: #00ffea;
+    color: #fdbb2d; /* Gold-orange text */
     position: relative;
     letter-spacing: 3px;
     text-transform: uppercase;
     text-shadow:
-        0 0 5px #00ffea,
-        0 0 10px #00ffea,
-        0 0 20px #00ffea,
-        0 0 40px #0ff;
+        0 0 5px #fdbb2d,
+        0 0 10px #fdbb2d,
+        0 0 20px #fdbb2d,
+        0 0 40px #fdbb2d;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1098,16 +1018,16 @@ li {
       opacity: 1;
       transform: translate(0,0) skew(0deg,0deg) rotate(0deg);
       text-shadow:
-        0 0 5px #00ffea,
-        0 0 10px #00ffea,
-        0 0 20px #00ffea,
-        0 0 40px #0ff;
+        0 0 5px #fdbb2d,
+        0 0 10px #fdbb2d,
+        0 0 20px #fdbb2d,
+        0 0 40px #fdbb2d;
     }
     20%, 24%, 55% {
       opacity: 0.3;
       transform: translate(-3px, 2px) skew(5deg, -5deg) rotate(-2deg);
       text-shadow:
-        0 0 3px #ff3c3c,
+        0 0 3px #ff3c3c,  /* Reddish flicker glitch */
         0 0 6px #ff3c3c,
         0 0 12px #ff3c3c;
     }
@@ -1115,9 +1035,9 @@ li {
       opacity: 0.6;
       transform: translate(2px, -2px) skew(-4deg, 4deg) rotate(1deg);
       text-shadow:
-        0 0 4px #00ffea,
-        0 0 8px #00ffea,
-        0 0 15px #0ff;
+        0 0 4px #fdbb2d,
+        0 0 8px #fdbb2d,
+        0 0 15px #fdbb2d;
     }
 }
 
@@ -1128,7 +1048,7 @@ li {
     max-width: 700px;
     text-align: center;
     line-height: 1.5;
-    text-shadow: 0 0 2px #00ffea;
+    text-shadow: 0 0 2px #fdbb2d;
 }
 
 /* Responsive Breakpoints */
@@ -1185,42 +1105,46 @@ li {
 }
 
 
-  /* .body-thankyou {
-    background: #f1f1f1;
-  } */
+.body-thankyou {
+  background-image: url('images/cartoon-smoke-illustrated.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 .thank-section {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    overflow: hidden;
-  }
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  overflow: hidden;
+}
 
-  .iso-text {
-    position: relative;
-    color: #fff;
-    font-weight: 900;
-    font-size: clamp(100px, 18vw, 300px);
-    letter-spacing: 3px;
-    text-align: center;
-    transform: rotate(-22deg) skew(25deg);
-    white-space: nowrap;
-    line-height: 1;
-    transition: opacity 0.3s ease;
-  }
+.iso-text {
+  position: relative;
+  color: #fedb33; /* gold-orange text color */
+  font-weight: 900;
+  font-size: clamp(100px, 18vw, 300px);
+  letter-spacing: 3px;
+  text-align: center;
+  transform: rotate(-22deg) skew(25deg);
+  white-space: nowrap;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
 
-  .iso-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 40px;
-    left: -40px;
-    color: rgba(0, 0, 0, 0.3);
-    filter: blur(10px);
-    z-index: -1;
-  }
+/* blurred shadow layer (outer glow) */
+.iso-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  color: rgba(0, 0, 0, 0.3);
+  filter: blur(10px);
+  z-index: -1;
+}
 
 .footer {
   width: 100%;
@@ -1232,3 +1156,39 @@ li {
   position: relative; /* change to fixed if you want it always at bottom */
   bottom: 0;
 }
+
+.body-par{
+  width:100%;
+  height:600px;
+  font-family: 'Inter', sans-serif;
+  text-align:center;
+}
+
+@media (max-width: 768px) {
+  .clouds {
+    display: none;
+  }
+
+  .body-par{
+    height: 300px;
+  }
+}
+
+#div-par {
+  position:absolute;
+}
+
+.main-par {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollDist {
+  width:100%;
+  height:200%;
+} 

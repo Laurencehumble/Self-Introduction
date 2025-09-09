@@ -9,20 +9,54 @@
     <link rel="icon" type="image/png" href="images/dp_picture.jpg">
 </head>
 <body>
-    <div class="hero">
-    <div class="navbar">
-        <div class="content">
-            <h1 id="typing"></h1>
-        </div>
-    </div>
-    <div class="leaves"></div>
-    </div>
+
+  <div class="body-par">
+    <!-- This is a recreation of Unfold's (https://dribbble.com/unfold) parallax scene: https://cdn.dribbble.com/users/14268/screenshots/3275340/northface.gif -->
+<div id="div-par" class="scrollDist"></div>
+<div class="main-par">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <mask id="m">
+      <g class="cloud1">
+        <rect fill="#fff" width="100%" height="600" y="799" />
+        <image xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800"/>
+      </g>
+    </mask>
+    
+    <image class="sky" href="images/sun-light-cloudy-sky-from-aerial-view.jpg"  width="1200" height="800" />
+    <image class="mountBg" xlink:href="https://assets.codepen.io/721952/mountBg.png" width="1200" height="820"/>    
+    <image class="mountMg" xlink:href="https://assets.codepen.io/721952/mountMg.png" width="1200" height="800"/>    
+    <image class="cloud2" xlink:href="https://assets.codepen.io/721952/cloud2.png" width="1200" height="800"/>    
+    <image class="mountFg" xlink:href="https://assets.codepen.io/721952/mountFg.png" width="1200" height="900"/>
+    <image class="cloud1" href="images/clouds-removebg-preview.png" width="1200" height="1220"/>
+    <image class="cloud3" xlink:href="https://assets.codepen.io/721952/cloud3.png" width="1200" height="800"/>
+   <text x="600" y="200" fill="#fff" text-anchor="middle" font-size="100" font-weight="700">
+  Getting To Know Me!
+</text>
+  
+    <g mask="url(#m)">
+      <defs>
+    <pattern id="imgPattern" patternUnits="userSpaceOnUse" width="1200" height="800">
+      <image href="images/clouds-removebg-preview.png" x="0" y="0" width="1200" height="800" />
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="800" fill="url(#imgPattern)" />      
+      <text x="350" y="200" fill="#162a43"></text>
+    </g>
+    
+    <rect id="arrow-btn" width="100" height="100" opacity="0" x="550" y="220" style="cursor:pointer"/>
+  </svg>
+</div>
+</div>
+
+<div class="clouds" style="height: 200px;"></div>
+
 
 <div class="background"></div>
 
 <div class="card">
   <div class="text">
-    <span class="dp_name">I'm Rhey Laurence M. Buday</span>
+    <span class="dp_name">Hi, I'm Rhey Laurence M. Buday</span>
     <p class="p_me">
      
     </p>
@@ -31,9 +65,11 @@
     <div class="photo">
       <img src="images/dp_picture.jpg" alt="Rhey Laurence M. Buday">
     </div>
-    <div class="small-photo">
-      <img src="images/129546958_2484024821898946_5070473558455486647_n.jpg" alt="Baby Picture">
-    </div>
+   <div class="small-photo">
+  <div class="flip-inner">
+    <img src="images/129546958_2484024821898946_5070473558455486647_n.jpg" alt="Baby Picture">
+  </div>
+  </div>
   </div>
 </div>
 
@@ -68,8 +104,9 @@
     </div>
   </div>
 </div>
-<div class="hide-it" style="height: 80px;"></div>
+<div class="hide-it" style="height: 120px;"></div>
 
+<div class="combination">
 <div class="body-me">
 <div class="section-me">
     <h2 class="h2-me"><span class="highlight">3</span> things I am <span class="neon">Good at :</span></h2>
@@ -89,6 +126,7 @@
     <ul>
       <li class="neon">1. Dancing</li>
     </ul>
+  </div>
   </div>
   </div>
 
@@ -151,5 +189,8 @@
 </body>
 <script type="module" src="script.js"></script>
 <script src="responsive.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 </html>

@@ -1,22 +1,23 @@
-// Typing Effect for Heading
-const headingText = "Getting To Know Me";
-let i = 0;
-const speed = 100; 
-const pause = 5000; 
+// // Typing Effect for Heading
+// const headingText = "Getting To Know Me";
+// let i = 0;
+// const speed = 100; 
+// const pause = 5000; 
 
-function typeHeading() {
-  if (i < headingText.length) {
-    document.getElementById("typing").innerHTML += headingText.charAt(i);
-    i++;
-    setTimeout(typeHeading, speed);
-  } else {
-    setTimeout(() => {
-      document.getElementById("typing").innerHTML = "";
-      i = 0;
-      typeHeading();
-    }, pause);
-  }
-}
+// function typeHeading() {
+//   if (i < headingText.length) {
+//     document.getElementById("typing").innerHTML += headingText.charAt(i);
+//     i++;
+//     setTimeout(typeHeading, speed);
+//   } else {
+//     setTimeout(() => {
+//       // Clear ONLY the heading, not the whole DOM
+//       document.getElementById("typing").innerHTML = "";
+//       i = 0;
+//       typeHeading();
+//     }, pause);
+//   }
+// }
 
 // Falling Leaves Generator
 function createLeaf() {
@@ -64,20 +65,21 @@ window.addEventListener("scroll", function () {
 
 // 2
 
-// Typing Effect for Paragraph
-const paraText = "Hi! I’m Rence. I was born on April 2, 2000, and I live at Janet Extension, Tandang Sora, Quezon City. I graduated from New Era University with a degree in Bachelor of Science in Information Technology. Here’s my latest photo along with a baby pic.";
+// Typing effect for paragraph
+const paraText =
+  "I commonly go by the formal nickname Rence. I was born on April 2, 2000, and I live at Janet Extension, Tandang Sora, Quezon City. I graduated from New Era University with a Bachelor of Science in Information Technology. Here’s my latest photo along with a baby picture. By the way, my favorite colors are orange and yellow.";
 let j = 0;
 
 function typeParagraph() {
   if (j < paraText.length) {
-    document.querySelector(".text .p_me").innerHTML += paraText.charAt(j);
+    document.querySelector(".p_me").innerHTML += paraText.charAt(j);
     j++;
-    setTimeout(typeParagraph, 50); // mas mabilis konti
+    setTimeout(typeParagraph, 50);
   }
 }
 
+// Run both on load
 window.onload = () => {
-  typeHeading();
   typeParagraph();
 };
 
@@ -91,6 +93,38 @@ document.addEventListener("DOMContentLoaded", () => {
     card.style.opacity = "1";
     card.style.transform = "translateY(0)";
   }, 200);
+});
+
+const mainPhoto = document.querySelector(".photo img");
+const smallPhoto = document.querySelector(".small-photo img");
+const smallPhotoBox = document.querySelector(".small-photo");
+
+// Hover in → flip forward + swap
+smallPhotoBox.addEventListener("mouseenter", () => {
+  smallPhotoBox.classList.remove("flipping-backward");
+  smallPhotoBox.classList.add("flipping-forward");
+
+  let tempSrc = mainPhoto.src;
+  mainPhoto.src = smallPhoto.src;
+  smallPhoto.src = tempSrc;
+
+  setTimeout(() => {
+    smallPhotoBox.classList.remove("flipping-forward");
+  }, 600);
+});
+
+// Hover out → flip backward + swap back
+smallPhotoBox.addEventListener("mouseleave", () => {
+  smallPhotoBox.classList.remove("flipping-forward");
+  smallPhotoBox.classList.add("flipping-backward");
+
+  let tempSrc = mainPhoto.src;
+  mainPhoto.src = smallPhoto.src;
+  smallPhoto.src = tempSrc;
+
+  setTimeout(() => {
+    smallPhotoBox.classList.remove("flipping-backward");
+  }, 600);
 });
 
 //3
@@ -214,13 +248,15 @@ function typeEffect() {
 window.addEventListener('DOMContentLoaded', typeEffect);
 
 // Apply stacked shadow for 3D extrusion effect
-  document.querySelectorAll('.iso-text').forEach(text => {
-    let shadow = "";
-    for (let i = 0; i < 40; i++) {
-      shadow += (shadow ? ',' : '') + -i * 1 + 'px ' + i * 1 + 'px 0 #d9d9d9';
-    }
-    text.style.textShadow = shadow;
-  });
+// Stacked shadow extrusion with gold depth
+document.querySelectorAll('.iso-text').forEach(text => {
+  let shadow = "";
+  for (let i = 0; i < 40; i++) {
+    shadow += (shadow ? ',' : '') + -i * 1 + 'px ' + i * 1 + 'px 0 #c97d0d';
+  }
+  text.style.textShadow = shadow;
+});
+
 
   // Generic scroll-based animator
   function makeScrollAnimator(el, direction = 1) {
@@ -277,3 +313,34 @@ window.addEventListener('DOMContentLoaded', typeEffect);
   makeScrollAnimator(document.getElementById('calibr8'), -1);  // opposite
   makeScrollAnimator(document.getElementById('thankText'),  1); // normal
   makeScrollAnimator(document.getElementById('knowMe'), -1);   // opposite
+
+  gsap
+  .timeline({
+    scrollTrigger:{
+      trigger:'.scrollDist',
+      start:'0 0',
+      end:'100% 100%',
+      scrub:1
+    }})
+  .fromTo('.sky', {y:0},{y:-200}, 0)
+  .fromTo('.cloud1', {y:100},{y:-800}, 0)
+  .fromTo('.cloud2', {y:-150},{y:-500}, 0)
+  .fromTo('.cloud3', {y:-50},{y:-650}, 0)
+  .fromTo('.mountBg', {y:-10},{y:-100}, 0)
+  .fromTo('.mountMg', {y:-30},{y:-250}, 0)
+  .fromTo('.mountFg', {y:-50},{y:-600}, 0)
+
+
+const arrowBtn = document.querySelector('#arrow-btn')
+
+arrowBtn.addEventListener('mouseenter', ()=>{
+ gsap.to('.arrow', {y:10, duration:0.8, ease:'back.inOut(3)', overwrite:'auto'}) 
+})
+
+arrowBtn.addEventListener('mouseleave', ()=> {
+  gsap.to('.arrow', {y:0, duration:0.5, ease:'power3.out', overwrite:'auto'}) 
+})
+
+arrowBtn.addEventListener('click', ()=> {
+  gsap.to(window, {scrollTo:innerHeight, duration:1.5, ease:'power1.inOut'})
+})
