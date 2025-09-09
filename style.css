@@ -790,9 +790,17 @@ li {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .rock img:nth-child(1){
+        .rock img:nth-child(1){
         width: 400px;
-        bottom: 20px;
+         bottom: 20px;
+    }
+
+        .rock img:nth-child(2){
+    display: none;
+    }
+
+        .rock img:nth-child(3){
+       display: none;
     }
 }
 
@@ -801,6 +809,14 @@ li {
     .rock img:nth-child(1){
         width: 400px;
          bottom: 20px;
+    }
+
+        .rock img:nth-child(2){
+    display: none;
+    }
+
+        .rock img:nth-child(3){
+       display: none;
     }
     
 }
