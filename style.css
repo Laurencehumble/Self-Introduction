@@ -678,7 +678,7 @@ li {
 /* Small Mobile (max-width: 479px) */
 @media (max-width: 479px) {
     .body-me{
-  height: 600px;
+  height: 700px;
   }
  .section-me {
     max-width: 90%;
