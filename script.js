@@ -182,6 +182,8 @@ function typeEffect() {
 
 window.addEventListener('DOMContentLoaded', typeEffect);
 
+//4
+
 // Apply stacked shadow for 3D extrusion effect
 // Stacked shadow extrusion with gold depth
 document.querySelectorAll('.iso-text').forEach(text => {
@@ -249,6 +251,8 @@ document.querySelectorAll('.iso-text').forEach(text => {
   makeScrollAnimator(document.getElementById('thankText'),  1); // normal
   makeScrollAnimator(document.getElementById('knowMe'), -1);   // opposite
 
+  //5
+  
   gsap
   .timeline({
     scrollTrigger:{
