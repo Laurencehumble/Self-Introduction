@@ -403,7 +403,7 @@
 @media (max-width: 991px) {
     .card-rotate{
              width: 100%;
-    max-height: 800px;
+    max-height: 930px;
   height: auto;
   }
     .section-title {
@@ -865,7 +865,7 @@ li {
 @media (max-width: 992px) {
     .rock img:nth-child(1){
         width: 600px;
-        bottom: 160px;
+        bottom: 50px;
     }
 }
 
