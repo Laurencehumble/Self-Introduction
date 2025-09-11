@@ -219,6 +219,7 @@
   }
 }
 
+
 /* 3 */
         .card-rotate{
              width: 100%;
@@ -1264,6 +1265,16 @@ li {
 }
 
 @media (max-width: 768px) {
+  .clouds {
+    display: none;
+  }
+
+  .body-par{
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
   .clouds {
     display: none;
   }
